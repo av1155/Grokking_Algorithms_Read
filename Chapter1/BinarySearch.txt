@@ -1,0 +1,65 @@
+If we are looking for a word in a dictionary with 240,000 words, for simple search, the worst case
+would be 240,000 steps. Because if we start at 1, and the word we are looking for is the 
+240,000th word, then we are stepping 240,000 times to find it.
+
+For binary search:
+    240,000 / 2 = 120,000
+    120,000 / 2 = 60,000
+    60,000 / 2 = 30,000
+    30,000 / 2 = 15,000
+    15,000 / 2 = 7,500
+    7,500 / 2 = 3,750
+    3,750 / 2 = 1,875
+    1,875 / 2 = 938
+    938 / 2 = 469
+    469 / 2 = 235
+    235 / 2 = 118
+    118 / 2 = 59
+    59 / 2  = 30
+    30 / 2 = 15
+    15 / 2 = 8
+    8 / 2 = 4
+    4 / 2 = 2
+    2 / 2  = 1
+
+It would take a maximum of 18 steps for the worse case scenario, versus 240,000 steps for simple search...
+
+Binary search will take log_2(n) steps for any list of n.
+
+    log_2(32) = ?
+
+        "2 to the power of what gives me 32?": 2 * 2 * 2 * 2 * 2 = 32 => 2^5 = 32, so 2^5, so answer is 5
+        log_2(32) = 5
+
+    log_10(10000) = ?
+
+        "10 to the power of what gives me 10000?": 10 * 10 * 10 * 10 = 10000 => 10^4 = 10000, so 10^4, so answer is 4
+        log_10(10000) = 4
+
+        For log_10(n), the trick is to simply look at the number of 0's on n (iff n is a power of 10), and that's the answer. So, log_10(10000000) = 7
+
+    Or, log_10(1000) = ln(1000) / ln(10) => "10 to the power of what to get 1000" => 10^3  = 1000, so answer is 3
+    Or, log_2(16) = ln(16) / ln(2) => "2 to the power of what to get 16" => 2^4  = 16, so answer is 4
+
+* When talking about big O notation, log (n) always refers to log_2(n) (log base 2 of (n)) 
+
+For a list of 1024 elements, how many steps would it take for the worst case scenario (element we want is the last element)?
+    log 1024 = log_2(1024) = 2^? = 1024:
+
+        2*2 = 4 * 2  = 8 * 2 = 16 * 2 = 32 * 2 = 64 * 2 = 128 * 2 = 256 * 2 = 512 * 2 = 1024.
+        There are 10 2's, so we need 2^10 to get to 1024. So the number of steps is only 10 for the worse case scenario.
+        This means we would only have to check 10 numbers/elements for the worst case scenario.
+
+
+log (240,000) = 18
+
+EXERCISES:
+
+1.1 Suppose you have a sorted list of 128 names, and you're searching through it using binary search. 
+    What's the maximum number of steps it would take?
+
+    log (n) -> n = 128 -> log (128) = 2^? = 128 -> 2^7 = 128... therefore, the maximum number of steps it would take is 7.
+
+1.2 Suppose you double the size of the list. What's the maximum number of steps now?
+    
+    log (n) -> n = 128 * 2 = 256 -> log (256) = 2^? = 256 -> 2^8 = 256... therefore, the maximum number of steps it would take is 8.
