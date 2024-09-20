@@ -6,8 +6,11 @@ def selectionSort(array):
             if array[j] < array[min_index]:
                 min_index = j
 
+        # Store the larger current value of i
         temp = array[i]
+        # Replace the larger current value of i with the new smallest value found
         array[i] = array[min_index]
+        # Replace the still existing smallest value found, with the larger current value of i
         array[min_index] = temp
 
     return array
