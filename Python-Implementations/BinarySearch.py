@@ -1,10 +1,10 @@
-def binary_search(list, item):
+def binarySearch(array, item):
     low = 0
-    high = len(list) - 1
+    high = len(array) - 1
 
     while low < high:
         middle = (low + high) // 2
-        guess = list[middle]
+        guess = array[middle]
 
         if guess == item:
             return middle
@@ -15,11 +15,13 @@ def binary_search(list, item):
         elif guess > item:
             high = middle - 1
 
+    return None
+
 
 def main():
-    list = [1, 5, 10, 15, 20, 35, 55, 100, 120, 200, 230]
+    array = [1, 5, 10, 15, 20, 35, 55, 100, 120, 200, 230]
     item = int(input("Enter the item you want to search for: "))
-    result = binary_search(list, item)
+    result = binarySearch(array, item)
     if result is not None:
         print(f"The item you were looking for is at index {result} of the list.")
     else:
