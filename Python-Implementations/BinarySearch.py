@@ -8,10 +8,8 @@ def binarySearch(array, item):
 
         if guess == item:
             return middle
-
         elif guess < item:
             low = middle + 1
-
         elif guess > item:
             high = middle - 1
 
