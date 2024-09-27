@@ -2,7 +2,7 @@ def binary_search(array, item):
     low = 0
     high = len(array) - 1
 
-    while low < high:
+    while low <= high:
         middle = (low + high) // 2
         guess = array[middle]
 
